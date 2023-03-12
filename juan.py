@@ -20,7 +20,7 @@ menu = {
 
 # crear una lista vacia para ir guardando los productos y cantidades que el cliente desea
 precios = []
-cantidad = []
+cantidades = []
 # crear una variable para controlar si el cliente desea seguir ordenando
 seguir_ordenando = "si"
 
@@ -37,12 +37,16 @@ while seguir_ordenando == "si":
     precios.append(list(menu.values())[opcion-1])
     print('')
     num_prod = int(input("¿Que cantidad desea ordenar de este mismo producto?: "))
-    cantidad.append(num_prod)
+    cantidades.append(num_prod)
     print('')
     seguir_ordenando = input("Desea ordenar algo mas? (si/no): ")
 
 # producto punto entre precios y cantidades, correspondiente al valor total de la cuenta.
-suma = np.dot(precios,cantidad)
+suma = np.dot(precios,cantidades)
+
+# suma = 0
+# for i in range(len(precios)):
+#     suma += (precios[i]*cantidades[i])
 
 # imprimir el total de la cuenta
 suma = "{:,}".format(suma).replace(',','.')
