@@ -42,7 +42,7 @@ while seguir_ordenando == "si":
         print('')
         seguir_ordenando = input("Desea ordenar algo mas? (si/no): ")
     except:
-        print('Elemento no exitse, porfavor elija una opcion valida')
+        print('El producto no existe, porfavor elija una opcion valida')
         continue
 
 
