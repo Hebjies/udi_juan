@@ -34,12 +34,17 @@ while seguir_ordenando == "si":
         num += 1
     print('')
     opcion = int(input("Digite el numero de la opcion que desea: "))
-    precios.append(list(menu.values())[opcion-1])
-    print('')
-    num_prod = int(input("¿Que cantidad desea ordenar de este mismo producto?: "))
-    cantidades.append(num_prod)
-    print('')
-    seguir_ordenando = input("Desea ordenar algo mas? (si/no): ")
+    try:
+        precios.append(list(menu.values())[opcion-1])
+        print('')
+        num_prod = int(input("¿Que cantidad desea ordenar de este mismo producto?: "))
+        cantidades.append(num_prod)
+        print('')
+        seguir_ordenando = input("Desea ordenar algo mas? (si/no): ")
+    except:
+        print('Elemento no exitse, porfavor elija una opcion valida')
+        continue
+
 
 # producto punto entre precios y cantidades, correspondiente al valor total de la cuenta.
 suma = np.dot(precios,cantidades)
